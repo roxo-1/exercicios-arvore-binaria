@@ -1,38 +1,36 @@
-public class Arvore extends No{
+public class ArvoreMetodos extends No{
     No raiz; // fazer o nó depois
-    public Arvore () { raiz = null; }
+    public ArvoreMetodos() { raiz = null; }
     public static int altura(No p){
         //Função que retorna a altura da árvore recursivamente
         if(p==null){
 		    return -1;
         }else{
-            int he = altura(p.esquerda);
-            int hq = altura(p.direita);
+            int he = altura(p.esq);
+            int hd = altura(p.dir);
             if(he>hd){
-                return he++;
+                return he+1;
             }
             else{
-                return hd++;
+                return hd+1;
             }
         }
 	}
 
-    public static int nivelNo(No p, int nivel){
+    public static void nivelNo(No p, int nivel){
         //Função que retorna o nível de cada nó da árvore
-        if(p==null){ // se nulo, não retorna nada
-            return;
-        }else{
-            System.out.println(nivelNo(p.esq, "  ", nivel+1));
-            System.out.print("  " + p.chave);
-            System.out.println(nivelNo(p.dir, " ", nivel+1));
+        if(p!=null){
+            nivelNo(p.esq, nivel+1);
+            System.out.print("  " + p.chave + ": " +nivel + "\n");
+            nivelNo(p.dir, nivel+1);
         }
     }
 
-    public static int mostraArvore(No p, String espaco){
+    public static void mostraArvore(No p, String espaco){
         if(p!=null){
+            mostraArvore(p.dir, espaco + "  ");
+            System.out.println(espaco + "-->" + p.chave);
             mostraArvore(p.esq, espaco + "  ");
-            System.out.println(espaco, + p.chave);
-            mostraArvore(p.dir, espaco+"  ");
         }
     }
 }
