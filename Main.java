@@ -12,6 +12,6 @@ public class Main{
         System.out.println(altura((60));
         int nivel = 0;
         nivelNo(65, nivel);
-        mostraArvore(No p, String espaco);
+        mostraArvore(No 35, String espaco);
     }
 }
