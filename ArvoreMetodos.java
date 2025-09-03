@@ -17,14 +17,22 @@ public class Arvore extends No{
         }
 	}
 
-    public static int nivelNo(No p){
+    public static int nivelNo(No p, int nivel){
         //Função que retorna o nível de cada nó da árvore
-        if(p==null){ // se nulo
-            return -1;
-        }else if(p==raiz){ //se p igual a raiz, nivel é 1
-            return 0;
-        }else{//caso contrário
-            //
+        if(p==null){ // se nulo, não retorna nada
+            return;
+        }else{
+            System.out.println(nivelNo(p.esq, "  ", nivel+1));
+            System.out.print("  " + p.chave);
+            System.out.println(nivelNo(p.dir, " ", nivel+1));
+        }
+    }
+
+    public static int mostraArvore(No p, String espaco){
+        if(p!=null){
+            mostraArvore(p.esq, espaco + "  ");
+            System.out.println(espaco, + p.chave);
+            mostraArvore(p.dir, espaco+"  ");
         }
     }
 }
