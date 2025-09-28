@@ -96,4 +96,19 @@ public class ArvoreMetodos extends No{
             return p;
     }
     //Complexidade no pior caso: O(h), onde h é a altura da árvore
+
+    int altura(No p){
+        if(p==null){
+            return -1;
+        }else{
+            int he = altura(p.esquerda);
+            int hq = altura(p.direita);
+            if(he>hd){
+                return he+1;
+            }
+            else{
+                return hd+1;
+            }
+        }
+    }
 }
