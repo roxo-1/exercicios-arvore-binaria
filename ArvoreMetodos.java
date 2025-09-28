@@ -43,16 +43,16 @@ public class ArvoreMetodos extends No{
     }
     //iterativo
     private void preOrdem(No p){
-            Stack<No> pilha = new Stack<>();
-            while(p!=null && !pilha.isEmpty(){
-                if(p!=null){
-                    System.out.println(p.chave);
-                    pilha.push(p);
-                    p=p.esq;
-                }else{
-                    p=(No)pilha.pop();
-                    p=p.dir
-                }
+        Stack<No> pilha = new Stack<>();
+        while(p!=null && !pilha.isEmpty(){
+            if(p!=null){
+                System.out.println(p.chave);
+                pilha.push(p);
+                p=p.esq;
+            }else{
+                p=(No)pilha.pop();
+                p=p.dir
             }
+        }
     }
 }
