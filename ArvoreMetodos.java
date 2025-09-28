@@ -172,7 +172,7 @@ public class ArvoreMetodos extends No{
         return saoIguais(p.esq, q.esq) & saoIguais(p.dir, q.dir);
     }
 
-    public boolean ehEstritamenteBinaria(No p){
+    public boolean ehEstritamenteBinaria(No p){//exatamente dois filhos
         if(p==null){
             return True;
         }
@@ -183,5 +183,40 @@ public class ArvoreMetodos extends No{
             return False;
         }
         return ehEstritamenteBinaria(p.esq) & ehEstritamenteBinaria(p.dir);
-}
+    }
+
+    // número total de nós 
+    private int totalNos(No p){
+        if(p==null){
+            return 0;
+        }
+        else{
+            return totalNos(p.esq)+totalNos(p.dir)+1;
+        }
+    }
+    // número de folhas
+    private int contaFolhas(No p){
+        if(p==null){
+            return 0;
+        }
+        if(p.esq == null && p.dir == null){
+            return 1;
+        }
+        else{
+            return contaFolhas(p.esq) + contaFolhas(p.dir);
+        }
+    }
+// número de nós internos
+    private int contaInternos(No p){
+        if(p==null){
+            return 0;
+        }
+        if(p.esq == null && p.dir == null){
+            return 0;
+        }
+        if(p!=raiz){
+            return contaInternos(p.esq) + contaInternos(p.dir)+1;
+        }
+        return contaInternos(p.esq) + contaInternos(p.dir)
+    }
 }
