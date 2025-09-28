@@ -145,4 +145,17 @@ public class ArvoreMetodos extends No{
             return conta_elementos(p.esq)+conta_elementos(p.dir)+1;
         }
     }
+
+    public void mostra_pares(No p){
+        if(p==null){
+            return;
+        }
+        else{
+            if(p.chave%2==0){
+                System.out.println(p.chave);
+            }
+            mostra_pares(p.esq);
+            mostra_pares(p.dir);
+        }
+    }
 }
