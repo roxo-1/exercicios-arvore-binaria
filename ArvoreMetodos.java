@@ -171,4 +171,17 @@ public class ArvoreMetodos extends No{
         }
         return saoIguais(p.esq, q.esq) & saoIguais(p.dir, q.dir);
     }
+
+    public boolean ehEstritamenteBinaria(No p){
+        if(p==null){
+            return True;
+        }
+        if(p.esq==null&&p.dir==null){
+            return True;
+        }
+        if(p.esq==null||p.dir==null){
+            return False;
+        }
+        return ehEstritamenteBinaria(p.esq) & ehEstritamenteBinaria(p.dir);
+}
 }
