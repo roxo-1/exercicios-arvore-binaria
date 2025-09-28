@@ -78,4 +78,12 @@ public class ArvoreMetodos extends No{
             }
         }
     }
+    //recursivo
+    private void posOrdemR(No p){
+        System.out.println(p.esq);
+        System.out.println(p.dir);
+        // System.out.println(p.chave);
+        posOrdemR(p.esq);
+        posOrdemR(p.dir);
+    }
 }
