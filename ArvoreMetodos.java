@@ -158,4 +158,17 @@ public class ArvoreMetodos extends No{
             mostra_pares(p.dir);
         }
     }
+
+    public boolean saoIguais(No p, No q){
+        if(p==null && q==null){
+            return True;
+        }
+        if(p==null || q==null{
+            return False;
+        }
+        if(p.chave!=q.chave){
+            return False;
+        }
+        return saoIguais(p.esq, q.esq) & saoIguais(p.dir, q.dir);
+    }
 }
