@@ -136,4 +136,13 @@ public class ArvoreMetodos extends No{
         }
     }
     //Complexidade é O(h), onde h é a altura da árvore.
+
+    public int conta_elementos(No p){
+        if(p==null){
+            return 0;
+        }
+        else{
+            return conta_elementos(p.esq)+conta_elementos(p.dir)+1;
+        }
+    }
 }
