@@ -219,4 +219,48 @@ public class ArvoreMetodos extends No{
         }
         return contaInternos(p.esq) + contaInternos(p.dir)
     }
+    public Arvore clone(){
+	Arvore novaArvore = new Arvore();
+	cloneArvore(raiz,novaArvore);
+	return novaArvore;
+}
+
+    private void clonaArvore(No p, Arvore novaArvore){
+        if(p!=null){
+            novaArvore.insere(p.chave);
+            cloneArvore(p.esq,novaArvore);
+            cloneArvore(p.dir,novaArvore);
+        }
+    }
+    public Arvore clone(){
+        Arvore novaArvore = new Arvore();
+        cloneArvore(raiz,novaArvore);
+        return novaArvore;
+    }
+
+    private void clonaArvore(No p, Arvore novaArvore){
+        if(p!=null){
+            novaArvore.insere(p.chave);
+            cloneArvore(p.esq,novaArvore);
+            cloneArvore(p.dir,novaArvore);
+        }
+    }
+    private boolean ehBST(No p, int min, int max){
+        if(p==null){
+            return True;
+        }
+        if(p.chave<p.esq.chave){
+            return False;
+        }
+        if(p.chave>p.dir.chave){
+            return False;
+        }
+        if(!ehBST(p.esq, min, p.chave)){
+            return False;
+        }
+        if(!ehBST(p.dir, p.chave, max)){
+            return False;
+        }
+        return True;
+    }
 }
