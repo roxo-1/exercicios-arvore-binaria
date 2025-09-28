@@ -94,6 +94,7 @@ public class ArvoreMetodos extends No{
                 p = busca(p.dir, chave);
             }
             return p;
+        }
     }
     //Complexidade no pior caso: O(h), onde h é a altura da árvore
 
@@ -262,5 +263,11 @@ public class ArvoreMetodos extends No{
             return False;
         }
         return True;
+    }
+    public int soma(No p){
+        if(p==null){
+            return 0;
+        }
+        return p.chave + soma(p.esq)+soma(p.dir;)
     }
 }
