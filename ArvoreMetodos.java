@@ -34,7 +34,7 @@ public class ArvoreMetodos extends No{
         }
     }
     //recursivo
-    public void preOrdem(No p){
+    public void preOrdemR(No p){
         if (p != null){
             visita(p);
             preOrdem(p.esq);
@@ -42,10 +42,33 @@ public class ArvoreMetodos extends No{
         }
     }
     //iterativo
-    private void preOrdem(No p){
+    private void preOrdemI(No p){
         Stack<No> pilha = new Stack<>();
         while(p!=null && !pilha.isEmpty(){
             if(p!=null){
+                System.out.println(p.chave);
+                pilha.push(p);
+                p=p.esq;
+            }else{
+                p=(No)pilha.pop();
+                p=p.dir
+            }
+        }
+    }
+    //recursivo
+    private void inOrdemR(No p){
+        if(p!=null){
+            inOrdem(p.esq);
+            System.out.println(p.chave);
+            inOrdem(p.dir);
+        }
+    }
+    //iterativo
+    private void inOrdemI(No p){
+        Stack<No> pilha = new Stack<>();
+        while(p!=null && !pilha.isEmpty()){
+            if(p!=null){
+                System.out.println(p.esq.chave);
                 System.out.println(p.chave);
                 pilha.push(p);
                 p=p.esq;
