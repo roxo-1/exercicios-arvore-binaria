@@ -85,4 +85,15 @@ public class ArvoreMetodos extends No{
         System.out.println(p.chave);
         
     }
+    private No busca(No p, int chave){
+        if (p != null){
+            if (chave < p.chave){
+                p = busca(p.esq, chave);
+            }
+            else if (chave > p.chave){
+                p = busca(p.dir, chave);
+            }
+            return p;
+    }
+    //Complexidade no pior caso: O(h), onde h é a altura da árvore
 }
